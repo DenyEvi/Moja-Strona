@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nike - Oficjalny Sklep</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://i.pinimg.com/originals/63/2a/68/632a681be7c9dbd77bc2a9ca6334af58.jpg');
+            background-size: cover; /* Dopasuj obraz do całego tła */
+            background-position: center; /* Wyśrodkuj obraz */
+            background-attachment: fixed; /* Utrzymaj obraz na stałej pozycji podczas przewijania */
+            margin: 0; /* Usuń domyślne marginesy */
+            padding: 0; /* Usuń domyślne paddingi */
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            color: #333;
+        }
+
+        header {
+            background-image: url('https://wallpapers.com/images/hd/jordan-shoes-4k-ficsl92tmk28ie8v.jpg');
+            color: white;
+            padding: 100px;
+            text-align: center;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        main {
+            padding: 20px;
+            overflow: visible;
+        }
+
+        section {
+            margin-bottom: 20px;
+
+        }
+        h1 {
+            font-size: 36px;
+            color: rgb(255, 255, 255);
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .tile img {
+            width: 100%; /* Obrazy skalują się do szerokości elementu nadrzędnego (tile) */
+            height: auto;
+            object-fit: cover;
+            border-radius: 5px;
+            cursor: pointer; /* Dodane, aby kursor zmieniał się po najechaniu na obraz */
+        }
+
+        .tile-container {
+            display: flex;
+            overflow-x: auto;
+            margin-bottom: 10px;
+        }
+        .tile-container2 {
+            display: flex;
+            overflow-x: auto;
+            margin-bottom: 10px;
+        }
+        .tileContainer2 {
+            display: flex;
+            overflow-x: auto;
+            margin-top: 20px;
+        }
+        .tile {
+            margin-right: 10px;
+            transition: transform 0.3s ease-in-out; /* Dodana animacja transformacji */
+        }
+
+        .tile img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .tile-container {
+            display: flex;
+            overflow-x: auto;
+            margin-bottom: 10px;
+}
+        .rectangle-container {
+            display: flex;
+            overflow-x: auto;
+}
+        .rectangle {
+            width: 700px;
+            height: 550px;
+            background-color: #000000;
+            padding: 10px;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+            border-radius: 30px; /* Dodana właściwość border-radius */
+            overflow: hidden; /* Ukryj zawartość, która wykracza poza obszar prostokąta */
+        
+        }
+        .rectangle img {
+            width: 750px;
+            height: 583px;
+            background-color: #e8e5e5;
+            padding: 20px;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+            object-fit: cover; 
+            border-radius: 15px;
+        }
+        .rectangle2 img {
+            max-width: 100%;
+            height: auto; /* Zapewnia zachowanie proporcji */
+        }
+        .rectangle3 img {
+            max-width: 100%;
+            height: auto; /* Zapewnia zachowanie proporcji */
+        }
+        
+        button {
+            background-color: #555;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .highlighted-section h1 {
+            color: #333; /* Kolor tekstu dla tej sekcji */
+        }
+
+        .highlighted-section .rectangle {
+            background-color: #fff; /* Kolor tła prostokąta */
+            border: 15px sienna #1f658a; /* Obramowanie prostokąta */
+            border-radius: 10px; /* Zaokrąglenie rogów prostokąta */
+            box-shadow: 0 0 70px rgba(255, 3, 3, 0.1); /* Cień prostokąta */
+        }
+        
+        #scrollableContainer {
+             display: flex;
+            overflow-x: auto;
+            scrollbar-width: thin; /* Dla Firefox */
+            scrollbar-color: #888 #f5f5f5; /* Dla Firefox */
+}
+
+        #scrollableContainer::-webkit-scrollbar {
+            width: 12px; /* Dla Chrome, Safari, Edge */
+}
+
+        #scrollableContainer::-webkit-scrollbar-thumb {
+            background-color: #888; /* Dla Chrome, Safari, Edge */
+}
+        #bestsellery,
+        #najnowsza-kolekcja,
+        #wiosenne-stylizacje,
+        #promocja-wiosenna {
+            scroll-snap-align: start; /* Dodane właściwości umożliwiające przewijanie sekcji */
+        }
+
+        .rectangle-container {
+            display: flex;
+            overflow-x: auto;
+        }  
+        .rectangle a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="file:///Users/danilo/%3C!DOCTYPE%20html%3E.html#promocja-wiosenna">Strona Główna</a></li>
+            <li><a href="podstrona.html">Podstrona</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Nike</h1>
+        
+    </header>
+
+    <nav>
+        <a href="#bestsellery">BESTSELLERY</a>
+        <a href="#najnowsza-kolekcja">Najnowsza Kolekcja</a>
+        <a href="#wiosenne-stylizacje">Wiosenne Stylizacje</a>
+        <a href="#promocja-wiosenna">Promocja Wiosenna</a>
+    </nav>
+
+    <main>
+        <section id="bestsellery">
+            <h1>BESTSELLERY w kategorii obuwie</h1>
+            <div class="tile-container" id="tileContainer2">
+                <div class="tile"><img
+                    src="https://static.nike.com/a/images/t_PDP_864_v1,f_auto,q_auto:eco/6de8217d-e9df-4680-8e0d-0bf16eb4829b/buty-air-force-1-07-T5lT7l.png"
+                    alt="Nike Air Force"></div>
+            <div class="tile"><img
+                    src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/10840850-715d-4157-b605-39b9b7fee2a0/buty-air-force-1-low-pltaform-2PlwKK.png"
+                    alt="Nike Air Force 1 Low Platform"></div>
+            <div class="tile"><img
+                    src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/cc1b8f16-7c89-40e0-8b48-c67fd821de91/buty-dunk-low-15mQNw.png"
+                    alt="Buty Dunk Low"></div>
+            <div class="tile"><img
+                    src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/aqcdmfttkq4cuvv9nuwx/buty-meskie-air-max-plus-iii-nsxfmc.png"
+                    alt="Buty Air Max Plus III"></div>
+            <div class="tile"><img
+                    src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/fc4622c4-2769-4665-aa6e-42c974a7705e/buty-meskie-air-force-1-07-HvZlfx.png"
+                    alt="Buty Air Force '07"></div>
+            <div class="tile"><img
+                    src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/84fdcee0-c38c-443c-bfef-2c5148438bd9/buty-meskie-air-max-plus-utility-HkwSWp.png"
+                    alt="Buty Air Max Plus Utility"></div>
+            <div class="tile"><img
+                    src="https://static.nike.com/a/images/t_prod_ss/w_960,c_limit,f_auto/d2896dd8-4848-449e-a9ff-01606582bd91/buty-damskie-dunk-low-„light-bone-and-dark-stucco”-fz4341-100-–-data-premiery.jpg"
+                    alt="Buty Damskie Air Max Plus Utility"></div>
+            <div class="tile"><img
+                    src="https://static.nike.com/a/images/t_prod_ss/w_960,c_limit,f_auto/4af6f9ad-9ede-4970-8755-673a885f3a4b/air-max-1-„light-soft-pink”-fz4133-640-–-data-premiery.jpg"
+                    alt="Buty Damskie Air Max Verona"></div>
+            <div class="tile"><img
+                    src="https://static.nike.com/a/images/t_prod_ss/w_960,c_limit,f_auto/793156fe-7e2c-428f-b3ae-e634b54297c5/air-peg-2k5-„-black-and-fire-red”-fj1912-001-–-data-premiery.jpg"
+                    alt="Buty Damskie Air Max Plus 3"></div>
+            <div class="tile"><img
+                    src="https://static.nike.com/a/images/t_prod_ss/w_960,c_limit,f_auto/02ae193a-d54b-477c-8a78-6d0e06eeda07/air-force-1-’07-„ashen-slate”-fb8876-400-–-data-premiery.jpg"
+                    alt="Buty Damskie Air Max 97"></div>
+                </nav>
+                <!-- Dodaj więcej obrazków -->
+
+            </div>
+        </section>
+    <section></section>
+        <section id="najnowsza-kolekcja">
+            <h1>Najnowsza Kolekcja</h1>
+            <div class="rectangle-container">
+                <div class="rectangle" id="rectangle1">
+                    <a href="file:///Users/danilo/%3C!DOCTYPE%20html%3E.html">
+                        <img src="https://a.allegroimg.com/original/11905c/808fa4294576a3f3be29a79f1753/LAMAX-X7-2-SPORTOWA-KAMERA-4K-30FPS-SLOW-MOTION-Szerokosc-produktu-6-cm" alt="najnowsza-kolekcja">
+                    </a>
+                </div>
+                <div class="rectangle" id="rectangle2">
+                    <a href="file:///Users/danilo/%3C!DOCTYPE%20html%3E.html">
+                        <img src="https://pbs.twimg.com/media/FY05zNFXkAMebv-.jpg:large" alt="Spodnie Damskie">
+                    </a>
+                </div>
+                <div class="rectangle" id="rectangle3">
+                    <a href="file:///Users/danilo/%3C!DOCTYPE%20html%3E.html">
+                        <img src="https://wallpaperbat.com/img/163556-sky-diving-adventure-sports-4k-ultra-hd-wallpaper-sports.jpg" alt="T-Shirty">
+                    </a>
+                </div>
+                <!-- Dodaj więcej prostokątów -->
+            </div>
+        </section>
+        <!-- Dodaj więcej sekcji -->
+
+        <section id="wiosenne-stylizacje">
+            <h1>Wiosenne Stylizacje</h1>
+            <div class="rectangle-container">
+                <!-- Pozostała część kodu bez zmian -->
+            </div>
+        </section>
+
+
+    </main>
+    <nav>
+        <a href="file:///Users/danilo/%3C!DOCTYPE%20html%3E.html">Mężczyźni</a>
+        <a href="file:///Users/danilo/%3C!DOCTYPE%20html%3E.html">Kobiety</a>
+        <a href="file:///Users/danilo/%3C!DOCTYPE%20html%3E.html">Dzieci</a>
+        <a href="file:///Users/danilo/%3C!DOCTYPE%20html%3E.html">Wyprzedaż</a>
+        <a href="file:///Users/danilo/%3C!DOCTYPE%20html%3E.html">Nowe i Polecane</a>
+        <a href="file:///Users/danilo/%3C!DOCTYPE%20html%3E.html">Popularne w tym tygodniu</a>
+        <a href="file:///Users/danilo/%3C!DOCTYPE%20html%3E.html">Piłka Nożna</a>
+        <a href="file:///Users/danilo/%3C!DOCTYPE%20html%3E.html">Siatkówka</a>
+        <a href="file:///Users/danilo/%3C!DOCTYPE%20html%3E.html">Koszykówka</a>
+        <a href="file:///Users/danilo/%3C!DOCTYPE%20html%3E.html">Tenis</a>
+        <a href="file:///Users/danilo/%3C!DOCTYPE%20html%3E.html">Sporty Zimowe</a>
+    </nav>
+
+    <main>
+        <section2>
+            <h1>BESTSELLERY w kategorii odzież</h1>
+            <div class="tile-container" id="tileContainer">
+                <!-- Dodaj więcej obrazków -->
+                <div class="tile"><img
+                        src="https://img01.ztat.net/article/spp-media-p1/0c416bea749b43c4a491204b732e6ff0/17aeb40c30444a6687231ab3f38fc01f.jpg?imwidth=500&filter=packshot"
+                        alt="Nike Air Force"></div>
+                <div class="tile"><img
+                        src="https://img01.ztat.net/article/spp-media-p1/f4a3ee2f389c4395b8d6379e2e114c37/eaabb226a69d4deaa94848d165ce2688.jpg?imwidth=1800&filter=packshot"
+                        alt="Nike Air Force 1 Low Platform"></div>
+                <div class="tile"><img
+                        src="https://img01.ztat.net/article/spp-media-p1/9f31f1fd3ca24703a34555a4903354dc/3e7bd298dfbc4ef4802c9a9c0cae0003.jpg?imwidth=1800&filter=packshot"
+                        alt="Buty Dunk Low"></div>
+                <div class="tile"><img
+                        src="https://img01.ztat.net/article/spp-media-p1/b2c22042756e4f04b638522e978c2af3/81dbd94930744459bc887983fbc5d9c3.jpg?imwidth=1800&filter=packshot"
+                        alt="Buty Air Max Plus III"></div>
+                <div class="tile"><img
+                        src="https://img01.ztat.net/article/spp-media-p1/bf64d6520ed949099484a1def3700677/00ed7b2f124c453da249db93e11b51aa.jpg?imwidth=1800&filter=packshot"
+                        alt="Buty Air Force '07"></div>
+                <div class="tile"><img
+                        src="https://img01.ztat.net/article/spp-media-p1/8324b96e2de24422bd96b1aefa72e2bc/658511350608477782a6af841ce0f57a.jpg?imwidth=1800&filter=packshot"
+                        alt="Buty Air Max Plus Utility"></div>
+                <div class="tile"><img
+                        src="https://img01.ztat.net/article/spp-media-p1/dfdb577afa8f436da4b5766710a24968/8968934e035148a0ad6cc5ce014ed5e8.jpg?imwidth=1800&filter=packshot"
+                        alt="Buty Damskie Air Max Plus Utility"></div>
+                <div class="tile"><img
+                        src="https://img01.ztat.net/article/spp-media-p1/01945ded7d944bfcb27a3817c57e4f72/70063704bd7f487090e80fc2f6ffc23a.jpg?imwidth=1800&filter=packshot"
+                        alt="Buty Damskie Air Max Verona"></div>
+                <div class="tile"><img
+                        src="https://img01.ztat.net/article/spp-media-p1/6e1a571f1dd34b0683b4a2f97d940c23/86ffcefccc64476bbc82be943f62266f.jpg?imwidth=762&filter=packshot"
+                        alt="Buty Damskie Air Max Plus 3"></div>
+                <div class="tile"><img
+                        src="https://img01.ztat.net/article/spp-media-p1/7acdb48b113a4950a756dd7fae976c37/ac65a887b25a438fa8cd88f801268a1d.jpg?imwidth=762&filter=packshot"
+                        alt="Buty Damskie Air Max 97"></div>
+                <!-- Dodaj więcej obrazków -->
+            </div>
+        </section2>
+
+        <section>
+            <h1>Najnowsza Kolekcja</h1>
+            <div class="tile-container">
+                <div class="rectangle" id="rectangle1">
+                    <img src="https://a.allegroimg.com/original/1e1542/707b4ec749219b8b5ae822763e60" alt="Nike Jacket">
+                </div>
+                <div class="rectangle" id="rectangle2">
+                  <img src="https://cdn.sport-shop.pl/p/v1/big/b5f9581c4a19cb59f9cd84c6c44467e5.jpg" alt="Spodnie Damskie">
+                </div>
+                <div class="rectangle" id="rectangle3">
+                    <img src="https://miniramp.pl/pol_pl_koszulka-Nike-SB-Logo-Skate-T-Shirt-29051_2.jpg" alt="T-Shirty">
+                </div>
+                <!-- Dodaj więcej prostokątów -->
+            </div>
+        </section>
+                <!-- Dodaj więcej sekcji -->
+            </section>
+
+            <section class="highlighted-section">
+                <h1>Wiosenne Stylizacje</h1>
+                <div class="tile-container">
+                    <div class="rectangle" id="rectangle1">
+                        <img src="https://wallpaperbat.com/img/280087-sports-wallpaper-best-hd-sports-photo.jpg" alt="Wiosna Kobieta">
+                    </div>
+                    <div class="rectangle" id="rectangle2">
+                        <img src="https://www.pixel4k.com/wp-content/uploads/2021/08/lebron-james-2022-4k_1629408276.jpg.webp" alt="Rodzina Swim">
+                    </div>
+                    <div class="rectangle" id="rectangle3">
+                        <img src="https://www.womenssportsfoundation.org/wp-content/uploads/2018/04/istock-636884938-1024x625.jpg" alt="Woda">
+                    </div>
+                    <!-- Dodaj więcej prostokątów -->
+                </div>
+            </section>
+        </body>
+        
+        </html>
+
+            <section>
+                <h1>Promocja Wiosenna</h1>
+                <div class="tile-container" id="tile-container2">
+                    <div class="rectangle" id="rectangle1">
+                        <img src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/87b57c04-3da2-45bb-bd03-70804cc98138/meska-kurtka-puchowa-z-kapturem-windrunner-primaloft-1dXTCQ.png" alt="Nike Jacket">
+                    </div>
+                    <div class="rectangle" id="rectangle2">
+                        <img src="https://i1.adis.ws/i/jpl/jd_668527_a" alt="Central Cee">
+                    </div>
+                    <div class="rectangle" id="rectangle3">
+                        <img src="https://img01.ztat.net/article/spp-media-p1/2289c155529642bcbf0a1ce0da6e15f3/a6ee78c55cad41de8bb5d52eff927fe8.jpg?imwidth=762" alt="Wiosna Facet">
+                    </div>
+                    <div class="rectangle" id="rectangle4">
+                        <img src="https://sportowy-markowy.pl/wp-content/uploads/2022/11/954d527f04da94ba4f2347b75bf5dae6.jpg" alt="buty sportowe">
+                    </div>
+                    <!-- Dodaj więcej prostokątów -->
+                </div>
+            </section>
+        <section>
+        
+            <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+               <script src="script.js"></script>
+
+
+    </main>
+
+</body>
+
+</html>
